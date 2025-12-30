@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    body {
+      width: 300px;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f8f9fa;
+    }
+    .header {
+      background-color: #1a73e8;
+      color: white;
+      padding: 15px;
+      text-align: center;
+    }
+    .header h2 { margin: 0; font-size: 18px; }
+    .status-container {
+      padding: 20px;
+      text-align: center;
+    }
+    .status-badge {
+      display: inline-block;
+      padding: 8px 16px;
+      border-radius: 20px;
+      background-color: #e6f4ea;
+      color: #1e8e3e;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+    .stats {
+      display: flex;
+      justify-content: space-around;
+      padding: 15px;
+      background: white;
+      border-top: 1px solid #ddd;
+    }
+    .stat-box { text-align: center; }
+    .stat-number { display: block; font-size: 20px; font-weight: bold; color: #1a73e8; }
+    .stat-label { font-size: 11px; color: #5f6368; }
+    .footer {
+      padding: 10px;
+      font-size: 11px;
+      text-align: center;
+      color: #70757a;
+      border-top: 1px solid #eee;
+    }
+    button {
+      width: 80%;
+      padding: 10px;
+      margin: 10px 10px;
+      border: none;
+      border-radius: 4px;
+      background: #1a73e8;
+      color: white;
+      cursor: pointer;
+    }
+    button:hover { background: #1557b0; }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <h2>DeepGuard AI</h2>
+  </div>
+
+  <div class="status-container">
+    <div class="status-badge" id="status">🛡️ Protection Active</div>
+    <p style="font-size: 13px; color: #3c4043;">Browsing session is being monitored for AI manipulation.</p>
+    <button id="viewHistory">View Scan History</button>
+  </div>
+
+  <div class="stats">
+    <div class="stat-box">
+      <span class="stat-number" id="scannedCount">0</span>
+      <span class="stat-label">Scanned</span>
+    </div>
+    <div class="stat-box">
+      <span class="stat-number" id="detectedCount" style="color: #d93025;">0</span>
+      <span class="stat-label">Deepfakes</span>
+    </div>
+  </div>
+
+  <div class="footer">
+    Powered by Google Gemini & Firebase
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
