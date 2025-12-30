@@ -1,8 +1,8 @@
-const GEMINI_API_KEY = "AIzaSyBz7KQvvXC0enfpdsFflHQ9nUccxfU1uUI"; 
+const GEMINI_API_KEY = "Add your API_KEY_HERE"; 
 const GEMINI_ENDPOINT = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${GEMINI_API_KEY}`;
 
 const firebaseConfig = {
-  apiKey: "AIzaSyBty2o2r1Rd3ZS6-8CrjvXHiU-jql2_w5I",
+  apiKey: "ADD YOUR API_KEY_HERE"
   authDomain: "deepguard-27f0b.firebaseapp.com",
   projectId: "deepguard-27f0b",
   storageBucket: "deepguard-27f0b.firebasestorage.app",
@@ -45,7 +45,7 @@ async function handleAnalysis(url, sendResponse) {
 }
 
 async function callGeminiAPI(base64Image) {
-    // ✅ FIXED: Explicitly defined 'prompt' string before using it in payload
+   
     const promptText = `Analyze this image for deepfake signs. Return ONLY a JSON object: {"isDeepfake": boolean, "confidence": number, "reason": string}`;
 
     const response = await fetch(GEMINI_ENDPOINT, {
@@ -81,4 +81,5 @@ async function callGeminiAPI(base64Image) {
     if (candidate.finishReason === "SAFETY") throw new Error("Safety Filter triggered.");
 
     return JSON.parse(candidate.content.parts[0].text);
+
 }
